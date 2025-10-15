@@ -53,3 +53,9 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# subject
+en.subject.pdf
+
+# tests files
+test*
