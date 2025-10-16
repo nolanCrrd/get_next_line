@@ -6,7 +6,7 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 12:21:12 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/16 08:27:41 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/16 14:59:07 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ char	*ft_strdup_til(char c, const char	*str)
 	while (str[i] && str[i] != c)
 		i++;
 	new = malloc(i + 1);
+	if (new == NULL)
+		return (new);
 	while (i >= 0)
 	{
 		new[i] = str[i];
@@ -56,7 +58,10 @@ char	*remove_line(char *str)
 	while (str[i] && str[i] != '\n')
 		i++;
 	if (str[i] == '\0')
+	{
+		free(str);
 		return (NULL);
+	}
 	new = ft_strdup_til('\0', &str[i + 1]);
 	free(str);
 	return (new);
@@ -74,29 +79,13 @@ size_t	ft_strlen(const char *str)
 	return (len);
 }
 
-char	*ft_strjoin_free(char *s1, char *s2)
+void	ft_bzero(void *s, size_t n)
 {
-	char	*new;
-	int		i;
-	int		j;
+	size_t			i;
+	unsigned char	*ptr;
 
-	i = ft_strlen(s1) + ft_strlen(s2);
-	new = malloc(i + 1);
-	if (new == NULL)
-		return (NULL);
+	ptr = s;
 	i = 0;
-	j = 0;
-	if (s1 != NULL)
-	{
-		while (s1[i])	
-			new[j++] = s1[i++];
-	}
-	i = 0;
-	if (s2 != NULL)
-	{
-		while (s2[i])	
-			new[j++] = s2[i++];
-	}
-	new[j] = '\0';
-	return (new);
+	while (i < n)
+		ptr[i++] = 0;
 }
