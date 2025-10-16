@@ -59,3 +59,4 @@ en.subject.pdf
 
 # tests files
 test*
+.vscode/launch.json
