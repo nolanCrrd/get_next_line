@@ -6,14 +6,13 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 12:04:39 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/16 15:00:16 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/16 18:24:42 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include <unistd.h>
 #include <stdlib.h>
-#include <strings.h>
 
 char	*ft_strjoin_free(char *s1, char *s2)
 {

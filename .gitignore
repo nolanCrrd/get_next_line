@@ -58,6 +58,7 @@ dkms.conf
 en.subject.pdf
 
 # tests files
+gnlTester
 test*
 .vscode/launch.json
 .DS_Store

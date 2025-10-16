@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/15 12:10:39 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/16 17:34:03 by ncorrear         ###   ########.fr       */
+/*   Created: 2025/10/16 16:54:35 by ncorrear          #+#    #+#             */
+/*   Updated: 2025/10/16 17:14:09 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H 
 
 // # define BUFFER_SIZE 1024
 
 # include <stddef.h>
+
+typedef struct s_list
+{
+	int				key;
+	char			*still;
+	struct s_list	*next;
+}	t_list;
 
 char	*get_next_line(int fd);
 int		char_in_str(char c, char *str);
