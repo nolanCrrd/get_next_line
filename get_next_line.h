@@ -6,7 +6,7 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 12:08:56 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/20 08:27:13 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/20 11:01:50 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 
 # include <stddef.h>
 
-typedef struct gnl_list {
+typedef struct s_gnl_list
+{
 	int				fd;
 	char			*buffer;
 	char			*line;
-	struct gnl_list *next;
-}	gnl_list;
+	struct gnl_list	*next;
+}	t_gnl_list;
 
 char	*get_next_line(int fd);
 size_t	strlen_til(char	*str, char c);
-int	is_line_finished(char *str);
-
+int		is_line_finished(char *str);
 
 #endif
