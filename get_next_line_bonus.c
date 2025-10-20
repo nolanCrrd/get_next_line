@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line bonus.c                              :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 10:57:33 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/20 11:08:19 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/20 12:43:03 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
-
-void	remove_line(char buffer[BUFFER_SIZE + 1], int index)
-{
-	int	i;
-
-	i = 0;
-	while (buffer[i] && index <= BUFFER_SIZE)
-		buffer[i++] = buffer[index++];
-	while (i <= BUFFER_SIZE)
-		buffer[i++] = 0;
-}
 
 t_gnl_list	*get_list_fd(t_gnl_list *lst, int fd)
 {
@@ -55,7 +44,7 @@ t_gnl_list	*get_list_fd(t_gnl_list *lst, int fd)
 	return (new);
 }
 
-void	remove_fd_list(t_gnl_list **lst, int fd)
+void	*remove_fd_list(t_gnl_list **lst, int fd)
 {
 	t_gnl_list	*current;
 	t_gnl_list	*prev;
@@ -80,6 +69,7 @@ void	remove_fd_list(t_gnl_list **lst, int fd)
 			free(current);
 		}
 	}
+	return (NULL);
 }
 
 int	append_line(char **dst, char	*src)
@@ -132,10 +122,7 @@ char	*get_next_line(int fd)
 			keep_working = read(fd, current_fd_list->buffer, BUFFER_SIZE);
 	}
 	if (!keep_working && current_fd_list->line == NULL)
-	{
-		remove_fd_list(&buffer_list, fd);
-		return (NULL);
-	}
+		return (remove_fd_list(&buffer_list, fd));
 	return (current_fd_list->line);
 }
 
