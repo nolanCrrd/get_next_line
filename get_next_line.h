@@ -6,7 +6,7 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 12:08:56 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/20 12:35:22 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/21 14:03:24 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define GET_NEXT_LINE_H
 
 # include <stddef.h>
-// #define BUFFER_SIZE 0
 
 typedef struct s_gnl_list
 {

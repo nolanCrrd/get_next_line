@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -D BUFFER_SIZE=42
 NAME = get_next_line.a
 
 SRCS = get_next_line.c \
@@ -22,10 +22,10 @@ $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@ -D BUFFER_SIZE=42
+	$(CC) $(CFLAGS) -c $< -o $@
 
 bonus: $(OBJS) $(BONUS_OBJS)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(BONUS_OBJS) -D BUFFER_SIZE=42
+	$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(BONUS_OBJS)
 
 clean:
 	$(RM) $(OBJS) $(BONUS_OBJS)

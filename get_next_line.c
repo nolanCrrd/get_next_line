@@ -6,7 +6,7 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 10:57:33 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/20 12:42:24 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/23 09:56:28 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,77 +116,8 @@ char	*get_next_line(int fd)
 		else
 			keep_working = read(fd, current_fd_list->buffer, BUFFER_SIZE);
 	}
-	if (!keep_working && current_fd_list->line == NULL)
-		return (remove_fd_list(&buffer_list, fd));
+	if (!keep_working && current_fd_list->line == NULL
+		&& !remove_fd_list(&buffer_list, fd))
+		return (NULL);
 	return (current_fd_list->line);
 }
-
-// void	test(void)
-// {
-// 	int	fd;
-// 	int fd2;
-// 	char	*line;
-
-// 	fd = open("tests/test_file.txt", O_RDONLY);
-// 	fd2 = open("tests/41_no_nl", O_RDONLY);
-// 	line = get_next_line(fd);
-// 	printf("%s", line);
-// 	if (line)
-// 		free(line);
-// 	line = NULL;
-// 	line = get_next_line(fd2);
-// 	printf("%s", line);
-// 	if (line)
-// 		free(line);
-// 	line = NULL;
-// 	line = get_next_line(fd);
-// 	printf("%s", line);
-// 	if (line)
-// 		free(line);
-// 	line = NULL;
-// 	line = get_next_line(fd);
-// 	printf("%s", line);
-// 	if (line)
-// 		free(line);
-// 	line = NULL;
-// 	line = get_next_line(fd);
-// 	printf("%s", line);
-// 	if (line)
-// 		free(line);
-// 	line = NULL;
-// 	line = get_next_line(fd);
-// 	printf("%s", line);
-// 	if (line)
-// 		free(line);
-// 	line = NULL;
-// 	line = get_next_line(fd2);
-// 	printf("%s", line);
-// 	if (line)
-// 		free(line);
-// 	line = NULL;
-// 	line = get_next_line(fd);
-// 	printf("%s", line);
-// 	if (line)
-// 		free(line);
-// 	line = NULL;
-// 	line = get_next_line(fd);
-// 	printf("%s", line);
-// 	if (line)
-// 		free(line);
-// 	line = NULL;
-// 	line = get_next_line(fd2);
-// 	printf("%s", line);
-// 	if (line)
-// 		free(line);
-// 	line = NULL;
-// 	line = get_next_line(fd2);
-// 	printf("%s", line);
-// 	if (line)
-// 		free(line);
-// 	line = NULL;
-// }
-
-// int	main(void)
-// {
-// 	test();
-// }
