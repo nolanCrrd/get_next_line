@@ -6,12 +6,16 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 12:08:56 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/21 14:03:24 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/24 16:07:14 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 # include <stddef.h>
 

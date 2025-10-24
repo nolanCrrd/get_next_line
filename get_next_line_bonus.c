@@ -6,12 +6,11 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 10:57:33 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/23 09:57:48 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/24 12:05:07 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
-#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
