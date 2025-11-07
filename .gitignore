@@ -1,0 +1,5 @@
+*.h.gch
+a.out
+*.h.pch
+.DS_Store
+main.c
